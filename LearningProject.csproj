@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Context\" />
-    <Folder Include="Features\" />
     <Folder Include="Framework - Copy\" />
     <Folder Include="Pages\" />
     <Folder Include="Steps\" />
