@@ -30,6 +30,8 @@ namespace LearningProject.Pages
         private readonly By ProfileLink = By.XPath("//a[contains(.,'Profile')]");
 
 
+        private readonly By validationerrormessageforLogin = By.XPath("//span[@class='label label-warning']");
+
         //Login Page Methods
         public void CloseApplication()
 
@@ -63,5 +65,15 @@ namespace LearningProject.Pages
             System.Threading.Thread.Sleep(2000);
         }
 
+        public void NavigatetoBuggyHome()
+        {
+            Driver.Navigate().GoToUrl("https://buggy.justtestit.org/");
+        }
+
+        public string ValidationMessageforLogin()
+        {
+
+            return GetElementText(validationerrormessageforLogin);
+        }
     }
 }
