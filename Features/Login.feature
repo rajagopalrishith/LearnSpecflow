@@ -1,9 +1,19 @@
-﻿Feature: Feature1
+﻿Feature: Login
 
-A short summary of the feature
+Background:
 
-@tag1
-Scenario: [scenario name]
-	Given [context]
-	When [action]
-	Then [outcome]
+
+@login
+Scenario: Validate logging in application with incorrect username and password combinations
+  Given I open the buggy application home page
+  When I fill in login Information
+	|   login        |    password         |  
+	|  <login>       |   <password>        |  
+  Then I click login button
+  And I Validate error message for invalid login
+
+  Examples:
+  	| login          | password                  |  
+	|  johnderek     |  Specialpassword_2        |  
+    |  johnderek2    |  Specialpassword_1        |  
+	|  johnderek2    |  Specialpassword_2        |
