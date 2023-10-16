@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace LearningProject.Framework
 {
-    public class BasePage : TechTalk.SpecFlow.Steps
+    public class FrameworkSupport : TechTalk.SpecFlow.Steps
     {
         private readonly IWait<IWebDriver> _wait;
         private readonly IWebDriver _driver;
@@ -19,7 +19,7 @@ namespace LearningProject.Framework
 
         protected IWebDriver Driver { get; set; }
 
-        public BasePage(IWebDriver driver, IWait<IWebDriver> wait)
+        public FrameworkSupport(IWebDriver driver, IWait<IWebDriver> wait)
         {
             _wait = wait;
             Driver = driver;
@@ -517,7 +517,7 @@ namespace LearningProject.Framework
 
         public bool isElementDisabled(By elementLocator)
         {
-            IWebElement element = null;
+            IWebElement? element = null;
             Boolean elementStatus = false;
             try
             {

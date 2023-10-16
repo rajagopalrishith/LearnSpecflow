@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace LearningProject.Pages
 {
-    public class LoginPage : BasePage
+    public class LoginPage : FrameworkSupport
     {
         protected new IWebDriver Driver { get; }
 
